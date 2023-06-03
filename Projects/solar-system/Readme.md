@@ -1,0 +1,2 @@
+- In **node** all of the streams are implemented using event emmiter.
+- fs.createReadStream(path, [options]) this is a method which is comming from node's fs module. This method will help us to open a file as a readable stream. This method will give you a readable stream which emits different named events. We have data, close, end, error.. multiple events inside the readable stream returned from fs.createReadStream.
