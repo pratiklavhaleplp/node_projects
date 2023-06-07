@@ -1,11 +1,20 @@
 const { parse } = require('csv-parse');
 const express = require('express');
+const mongoose = require('mongoose');
+
+
 
 const fs = require('fs');
 const { resolve } = require('path');
 
 const dataArr = [];
 const app = express();
+
+mongoose.connect('mongodb://localhost/ourdata');
+mongoose.Promise = global.Promise;
+
+app.use(express.static('public'));
+app.use(express.json());
 
 const bookData = new Promise((resolve, reject) => {
     fs.createReadStream('kepler_data.csv').
