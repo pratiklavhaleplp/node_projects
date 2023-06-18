@@ -4,19 +4,6 @@ const uri = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTim
 
 let client = new MongoClient(uri);
 
-// const Run = new Promise((resolve, reject) => {
-//     try {
-//         const database = client.db('movieData');
-//         const movies = database.collection('movies');
-//         const movie = movies.findOne();
-//         resolve(movie);
-//     } catch (err) {
-//         reject(err);
-//         client.close();
-//     }
-// });
-
-// Run.then(res => {console.log(res); client.close()}).catch(err => { console.log(err) });
 
 function findDocument(dbName, collectionName, query = {}) {
     return new Promise((resolve, reject) => {
